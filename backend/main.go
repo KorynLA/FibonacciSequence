@@ -1,6 +1,7 @@
 /**
 * Server that runs on http://localhost:8080
-* Endpoints: 
+* Endpoints: /api/fibonacci/{digit}
+* Returns: [int values]
 **/
 package main
 import (
