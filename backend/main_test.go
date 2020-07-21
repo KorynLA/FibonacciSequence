@@ -12,7 +12,9 @@ type testPairOverflowed struct {
   value2 int
   overflow bool
 }
-
+/**
+* Test for integer overflow
+**/
 var testsOverflow = []testPairOverflowed {
 	{ 20, 20, false},
 	{ math.MaxUint32, math.MaxUint32, true},
@@ -30,6 +32,9 @@ func testsOverflowed(t *testing.T) {
   }
 }
 
+/**
+* Test to determine fibonacci algorithm is correct 
+**/
 var tests = []testPair {
   { 1, []int{0}},
   { 13, []int{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144}},
