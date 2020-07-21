@@ -1,5 +1,6 @@
 /**
 * Server that runs on http://localhost:8080
+* Endpoints: 
 **/
 package main
 import (
@@ -78,11 +79,11 @@ func FibonacciSequence(w http.ResponseWriter, r *http.Request, ps httprouter.Par
   	w.Write(sequenceToReturn)
 	fmt.Println(string(sequenceToReturn))
 }
-
+/**
+* Main function where program begins
+**/
 func main() {
 	router := httprouter.New()
-	router.GET("/api", Index)
-	router.GET("/api/hello/:name", Hello)
 	router.GET("/api/fibonacci/:digitsToParse", FibonacciSequence)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
