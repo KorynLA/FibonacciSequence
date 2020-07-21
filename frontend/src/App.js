@@ -1,12 +1,17 @@
 import React, { useRef, useState } from 'react';
-//import ViewSequence from './components/FibonacciSequenceDisplay';
 import logo from './logo.svg';
 import './App.css';
-
+/**
+* React app that takes a client digit and returns the fibonacci sequence for it
+**/
 function App() {
   const [digit, setDigit] = useState("");
   const [sequence, setSequence] = useState([]);
 
+  /**
+  * Called when user is submiting a form
+  * fetches the fibonacci sequence from the api using the client entered digit and sets the sequence data
+  **/
   function handleSubmit(event) {
     event.preventDefault();
     fetch("/api/fibonacci/"+digit)
@@ -16,7 +21,9 @@ function App() {
         console.log(error);
       });
   }
-  
+  /**
+  * Returns the sequence data as an unordered list through mapping
+  **/
   function viewSequence() {
     if((sequence.data) != undefined) {
       const sequenceValues = sequence.data.map((value) =>
