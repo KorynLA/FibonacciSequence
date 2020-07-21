@@ -18,6 +18,8 @@ type testPairOverflowed struct {
 var testsOverflow = []testPairOverflowed {
 	{ 20, 20, false},
 	{ math.MaxUint32, math.MaxUint32, true},
+	{ 1, math.MaxUint32, true},
+	{ 0, math.MaxUint32, false},
 }
 func testsOverflowed(t *testing.T) {
   for _, pair := range testsOverflow {
@@ -36,6 +38,7 @@ func testsOverflowed(t *testing.T) {
 * Test to determine fibonacci algorithm is correct 
 **/
 var tests = []testPair {
+  {0, []int{}},
   { 1, []int{0}},
   { 13, []int{0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144}},
 }
